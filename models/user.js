@@ -53,7 +53,7 @@ userSchema
   });
 
 //mongoose methods
-userSchema.method = {
+userSchema.methods = {
   //authenticate user password
   authenticate: function (plainPassword) {
     return this.securePassword(plainPassword) === this.encry_password;
