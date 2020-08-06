@@ -8,6 +8,7 @@ const app = express();
 
 const authRoutes = require("./routes/authentication");
 const userRoutes = require("./routes/user");
+const noteRoutes = require("./routes/note");
 
 //db connection
 mongoose
@@ -28,6 +29,7 @@ app.use(cors());
 //Routes
 app.use("/api", authRoutes);
 app.use("/api", userRoutes);
+app.use("/api", noteRoutes);
 
 const port = process.env.PORT || 2004;
 
