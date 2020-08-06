@@ -16,9 +16,6 @@ var noteSchema = new mongoose.Schema(
       required: true,
       maxlength: 200,
     },
-    priority: {
-      type: Number,
-    },
     author: {
       type: ObjectId,
       ref: "User",
