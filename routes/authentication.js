@@ -2,7 +2,12 @@
 var express = require("express");
 var router = express.Router();
 const { check } = require("express-validator");
-const { signup, signin, signout } = require("../controllers/authentication");
+const {
+  signup,
+  signin,
+  signout,
+  isSignedIn,
+} = require("../controllers/authentication");
 
 router.post(
   "/signup",
@@ -27,6 +32,13 @@ router.post(
 );
 
 router.get("/signout", signout);
+
+//for testing jwt alogrithum error
+// router.get("/test", isSignedIn, (req, res) => {
+//   res.json({
+//     msg: "TEST PROTECTED",
+//   });
+// });
 
 //export routes
 module.exports = router;
