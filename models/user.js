@@ -5,6 +5,8 @@ const crypto = require("crypto");
 //import uuid for salt
 const { v1: uuidv1 } = require("uuid");
 
+const { ObjectId } = mongoose.Schema;
+
 //user schema
 var userSchema = new mongoose.Schema({
   firstName: {
