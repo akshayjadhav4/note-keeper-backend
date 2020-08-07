@@ -30,7 +30,7 @@ router.put(
   updateNote
 );
 
-router.delete(
+router.get(
   "/note/delete/:userId/:noteId",
   isSignedIn,
   isAuthenticated,
