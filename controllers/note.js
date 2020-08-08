@@ -34,7 +34,7 @@ exports.getNote = (req, res) => {
 
 exports.userNotes = (req, res) => {
   Note.find({ author: req.profile._id })
-    .sort({ createdAt: -1 })
+    //.sort({ createdAt: -1 })
     .populate("author", " _id firstName  lastName")
     .exec((error, notes) => {
       if (error) {
@@ -70,8 +70,6 @@ exports.deleteNote = (req, res) => {
         error: "delete operation failed",
       });
     }
-    return res.json({
-      message: `${deletedNote.title} deleted`,
-    });
+    return res.json(note);
   });
 };
