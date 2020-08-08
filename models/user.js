@@ -5,8 +5,6 @@ const crypto = require("crypto");
 //import uuid for salt
 const { v1: uuidv1 } = require("uuid");
 
-const { ObjectId } = mongoose.Schema;
-
 //user schema
 var userSchema = new mongoose.Schema({
   firstName: {
@@ -32,12 +30,6 @@ var userSchema = new mongoose.Schema({
     required: true,
   },
   salt: String,
-  notes: [
-    {
-      type: ObjectId,
-      ref: "Note",
-    },
-  ],
 });
 
 //virtuals

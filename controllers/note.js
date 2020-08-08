@@ -1,4 +1,3 @@
-const User = require("../models/user");
 const Note = require("../models/note");
 
 exports.getNoteById = (req, res, next, id) => {
@@ -24,18 +23,7 @@ exports.createNote = (req, res) => {
         error: error,
       });
     }
-    User.findOneAndUpdate(
-      { _id: req.profile._id },
-      { $push: { notes: note._id } },
-      { new: true },
-      (err, user) => {
-        if (err) {
-          return res.status(400).json({
-            error: "Unable to save note in list",
-          });
-        }
-      }
-    );
+
     return res.json(note);
   });
 };
